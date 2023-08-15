@@ -3,10 +3,8 @@
 import RPi.GPIO as GPIO
 import time
 import threading
-import datetime
+from datetime import datetime
 import pandas as pd
-
-df1 = pd.read_csv("output/output_junc1.csv")
 
 #define the pins connect to 74HC595
 SDI   = 24      #serial data input(DS)
@@ -20,18 +18,18 @@ ledPin_2 = (25,8,7)
 ledPin_3 =(4,5,6)
 ledPin_4 = (13,19,26)
 
-greenLight_NS = 60
+greenLight_NS = 30
 yellowLight_NS = 2
 redLight_NS = 32
 
 greenLight_WE = 30
 yellowLight_WE = 2
-redLight_WE = 62
+redLight_WE = 32
 
 lightColor=("Red_NS","Green_NS","Yellow_NS", "Red_WE")
 
 colorState=0
-counter = 60
+counter = 30
 counter_2 = 30
 timer1 = 0
 
@@ -84,6 +82,7 @@ def timer():        #timer function
     timer1.start()
     counter-=1
     counter_2 -= 1
+    timing()
     if (counter is 0 or counter_2== 0):
         if(colorState is 0):
             counter= yellowLight_NS
@@ -125,6 +124,49 @@ def lightup():
             GPIO.output(ledPin_2[1], GPIO.LOW)
             GPIO.output(ledPin_3[0], GPIO.LOW)
             GPIO.output(ledPin_4[0], GPIO.LOW)
+
+def timing():
+    global greenLight_NS
+    global yellowLight_NS
+    global redLight_NS
+    global greenLight_WE
+    global yellowLight_WE
+    global redLight_WE
+    df1 = pd.read_csv("../output/output_junc1.csv")
+    now = datetime.now()
+    Hour = int(now.strftime("%H"))
+    Day = int(now.strftime("%d"))
+    Year = int(now.strftime("%Y"))
+    Month = int(now.strftime("%m"))
+    number_of_vehicles = df1.loc[(df1['Hour']== Hour) & (df1['Day']==Day) &
+           (df1['Year']==Year) & (df1['Month']==Month)]['Vehicles'].values[0]
+
+    if number_of_vehicles < 30:
+        greenLight_NS = 100
+        yellowLight_NS = 3
+        redLight_NS = 103
+
+        greenLight_WE = 100
+        yellowLight_WE = 3
+        redLight_WE = 103
+
+    elif (number_of_vehicles < 31) and (number_of_vehicles > 61):
+        greenLight_NS = 60
+        yellowLight_NS = 3
+        redLight_NS = 63
+
+        greenLight_WE = 60
+        yellowLight_WE = 3
+        redLight_WE = 47
+
+    else:
+        greenLight_NS = 45
+        yellowLight_NS = 3
+        redLight_NS = 48
+
+        greenLight_WE = 45
+        yellowLight_WE = 3
+        redLight_WE = 48
 
 def display():
     global counter
