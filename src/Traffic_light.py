@@ -4,6 +4,9 @@ import RPi.GPIO as GPIO
 import time
 import threading
 import datetime
+import pandas as pd
+
+df1 = pd.read_csv("output/output_junc1.csv")
 
 #define the pins connect to 74HC595
 SDI   = 24      #serial data input(DS)
