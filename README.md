@@ -30,30 +30,30 @@
 #### Steps:
 
 ##### Clean data studying dataframe
-1. Cleaned dataset [this subtext](data/traffic.csv) by dropping null values. (Decided no further cleaning needed since the dataset appeared clean)
+1. Cleaned dataset [data/traffic.csv](data/traffic.csv) by dropping null values. (Decided no further cleaning needed since the dataset appeared clean)
 2. Studied the columns and what they represent as well as how many data are in each junction
 
 ##### EDA
-1. Created various graphs to see the relationship between the features and the number of vehicles using both Tableau [this subtext](Tableau/Tableau_EDA.twb) and jupyter notebook ([this subtext](notebooks/Traffic_prediction.ipynb))
+1. Created various graphs to see the relationship between the features and the number of vehicles using both Tableau [Tableau/Tableau_EDA.twb](Tableau/Tableau_EDA.twb) and jupyter notebook ([notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb))
 
 ##### Preprocessing/ Feature Selection
-1. Preprocessing done in jupyter notebook ([this subtext](notebooks/Traffic_prediction.ipynb)) and saved to data/cleaned_data.csv in first round of processing
-2. In the second round of processing all the features are made to numerical and saved to [this subtext](data/preprocesed_data.csv) (tested in [this subtext](notebooks/Traffic_prediction.ipynb) and created the output file in [this subtext](src/preprocessing.py))
+1. Preprocessing done in jupyter notebook ([notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb)) and saved to data/cleaned_data.csv in first round of processing
+2. In the second round of processing all the features are made to numerical and saved to [data/preprocesed_data.csv](data/preprocesed_data.csv) (tested in [notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb) and created the output file in [src/preprocessing.py](src/preprocessing.py))
 3. Selected Features are Year, Month, Day, Day_of_the_week, Hour and Junction
 
 ##### Creating test dataset
-1. Test dataset was generated to test and simulate the predictions for year 2023 [this subtext](src/test_file_generator_2023.py) and saved as [this subtext](test_files/test_2023.csv)
+1. Test dataset was generated to test and simulate the predictions for year 2023 [src/test_file_generator_2023.py](src/test_file_generator_2023.py) and saved as [test_files/test_2023.csv](test_files/test_2023.csv)
 
 ## Results:
 
 ##### Model Evaluation results:
-1. Random Forest Regressor, Polynomial Regressor and XGBoost Regressor were created and evaluated in [this subtext](notebooks/Traffic_prediction.ipynb) for whole dataset as well as for each junction seperately
+1. Random Forest Regressor, Polynomial Regressor and XGBoost Regressor were created and evaluated in [notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb) for whole dataset as well as for each junction seperately
 2. According to the evaluation Ranndom Forest Regressor had the best accuracy and selected as the ML model
 
 ##### Predictions using ML models
-1. In [this subtext](src/ML_model_rf.py) Random Forest Regressor was used to create the output prediction for the year 2023 for each junction and saved in output directory
+1. In [src/ML_model_rf.py](src/ML_model_rf.py) Random Forest Regressor was used to create the output prediction for the year 2023 for each junction and saved in output directory
 
 ##### Combining with hardware
-1. Junction 1 is simulated in Raspberry Pi using the predictions done by Random Forest Regressor to decide the timing for traffic lights at each hour. ([this subtext](src/Traffic_light.py))
+1. Junction 1 is simulated in Raspberry Pi using the predictions done by Random Forest Regressor to decide the timing for traffic lights at each hour. ([src/Traffic_light.py](src/Traffic_light.py))
 
-[this subtext](Traffic_light_controller_video.mp4)
+[Raspberry Pi Traffic Light Controller Using the ML model Video](Traffic_light_controller_video.mp4)
