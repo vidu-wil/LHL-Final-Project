@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+###################################################################
+# The Traffic light controller is created using a templated       #
+# from Sounfounder raphael-kit and modified to use the            #
+# ML predictions and function as a 4-way traffic light controller #
+###################################################################
+
+
+# importing modules
+
 import RPi.GPIO as GPIO
 import time
 import threading
@@ -18,6 +27,7 @@ ledPin_2 = (25,8,7)
 ledPin_3 =(4,5,6)
 ledPin_4 = (13,19,26)
 
+# set initial times for each light
 greenLight_NS = 30
 yellowLight_NS = 2
 redLight_NS = 32
