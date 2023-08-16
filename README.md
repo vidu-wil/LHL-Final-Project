@@ -56,4 +56,4 @@
 ##### Combining with hardware
 1. Junction 1 is simulated in Raspberry Pi using the predictions done by Random Forest Regressor to decide the timing for traffic lights at each hour. ("src/Traffic_light.py")
 
-<video src="Traffic_light_controller_video.mp4" controls title="Title"></video>
+<video src="https://github.com/vidu-wil/LHL-Final-Project/blob/main/Traffic_light_controller_video.mp4" controls title="Title"></video>
