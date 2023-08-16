@@ -37,7 +37,7 @@
 1. Created various graphs to see the relationship between the features and the number of vehicles using both Tableau [Tableau/Tableau_EDA.twb](Tableau/Tableau_EDA.twb) and jupyter notebook ([notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb))
 
 ##### Preprocessing/ Feature Selection
-1. Preprocessing done in jupyter notebook ([notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb)) and saved to data/cleaned_data.csv in first round of processing
+1. Preprocessing done in jupyter notebook ([notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb)) and saved to [data/cleaned_data.csv](data/cleaned_data.csv) in first round of processing
 2. In the second round of processing all the features are made to numerical and saved to [data/preprocesed_data.csv](data/preprocesed_data.csv) (tested in [notebooks/Traffic_prediction.ipynb](notebooks/Traffic_prediction.ipynb) and created the output file in [src/preprocessing.py](src/preprocessing.py))
 3. Selected Features are Year, Month, Day, Day_of_the_week, Hour and Junction
 
