@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0611.2007                               -->
+<workbook original-version='18.1' source-build='2023.2.0 (20232.23.0611.2007)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Junction 1' caption='Junction_bin' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <aliases>
+          <alias key='1' value='Junction 1' />
+          <alias key='2' value='Junction 2' />
+          <alias key='3' value='Junction 3' />
+          <alias key='4' value='Junction 4' />
+        </aliases>
+        <members>
+          <member alias='Junction 1' value='1' />
+          <member alias='Junction 2' value='2' />
+          <member alias='Junction 3' value='3' />
+          <member alias='Junction 4' value='4' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='preprocesed_data' inline='true' name='federated.01x2u8413axr4p1a08a690lugigh' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='preprocesed_data' name='textscan.17x1ca517pjnh01dgav8b04h32pu'>
+            <connection class='textscan' directory='C:/Users/user/Desktop/DataScience/FinalProject/LHL-Final-Project/data' filename='preprocesed_data.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='traffic' name='textscan.11vhlqv1eh51be1csyas90hio9y8'>
+            <connection class='textscan' directory='C:/Users/user/Desktop/DataScience/FinalProject/LHL-Final-Project/data' filename='traffic.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='cleaned_data' name='textscan.0ywami30zxjtjo1cdghen1nsq0te'>
+            <connection class='textscan' directory='C:/Users/user/Desktop/DataScience/FinalProject/LHL-Final-Project/data' filename='cleaned_data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0ywami30zxjtjo1cdghen1nsq0te' name='cleaned_data.csv' table='[cleaned_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='datetime' name='DateTime' ordinal='1' />
+            <column datatype='integer' name='Junction' ordinal='2' />
+            <column datatype='integer' name='Vehicles' ordinal='3' />
+            <column datatype='datetime' name='Time' ordinal='4' />
+            <column datatype='integer' name='Hour' ordinal='5' />
+            <column datatype='integer' name='Month-Day' ordinal='6' />
+            <column datatype='integer' name='Day-of-Week' ordinal='7' />
+            <column datatype='integer' name='Year' ordinal='8' />
+            <column datatype='integer' name='Month' ordinal='9' />
+            <column datatype='integer' name='Day' ordinal='10' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0ywami30zxjtjo1cdghen1nsq0te' name='cleaned_data.csv' table='[cleaned_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='datetime' name='DateTime' ordinal='1' />
+            <column datatype='integer' name='Junction' ordinal='2' />
+            <column datatype='integer' name='Vehicles' ordinal='3' />
+            <column datatype='datetime' name='Time' ordinal='4' />
+            <column datatype='integer' name='Hour' ordinal='5' />
+            <column datatype='integer' name='Month-Day' ordinal='6' />
+            <column datatype='integer' name='Day-of-Week' ordinal='7' />
+            <column datatype='integer' name='Year' ordinal='8' />
+            <column datatype='integer' name='Month' ordinal='9' />
+            <column datatype='integer' name='Day' ordinal='10' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateTime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[DateTime]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>DateTime</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Junction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Junction]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Junction</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Vehicles</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Vehicles]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Vehicles</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[Time]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Time</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Hour]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Hour</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month-Day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month-Day]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Month-Day</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Day-of-Week</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Day-of-Week]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Day-of-Week</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Day]</local-name>
+            <parent-name>[cleaned_data.csv]</parent-name>
+            <remote-alias>Day</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Junction count' datatype='real' default-format='p0.00%' name='[Calculation_107804975179784194]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([Junction])/48120' />
+      </column>
+      <column caption='Junction Category' datatype='string' name='[Calculation_107804975181455363]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Junction]&#13;&#10;WHEN  1 THEN &quot;Junction 1&quot;&#13;&#10;WHEN  2 THEN &quot;Junction 2&quot;&#13;&#10;WHEN 3 THEN &quot;Junction 3&quot;&#13;&#10;WHEN 4 THEN &quot;Junction 4&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Date Time' datatype='datetime' name='[DateTime]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Day]' role='dimension' type='quantitative' />
+      <column caption='Hour (bin)' datatype='integer' name='[Hour (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Hour]' peg='0' size='1' />
+      </column>
+      <column datatype='integer' name='[Hour]' role='measure' type='quantitative' />
+      <column aggregation='None' caption='Junction (bin)' datatype='integer' name='[Junction (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-3' formula='[Junction]' peg='0' size-parameter='[Parameters].[Parameter 1]' />
+      </column>
+      <column datatype='integer' name='[Junction]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Month-Day]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+      <column aggregation='Hour' datatype='datetime' name='[Time]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='cleaned_data.csv' datatype='table' name='[__tableau_internal_object_id__].[cleaned_data.csv_4D8A2DEC0CCB4DBF9A8E3589589F46D9]' role='measure' type='quantitative' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Junction (bin)]' derivation='None' name='[none:Junction (bin):ok]' pivot='key' type='ordinal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='false' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Junction (bin):ok]' palette='purple_pink_gray_10_0' type='palette'>
+            <map to='#2a5783'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>4</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Junction 1' caption='Junction_bin' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <aliases>
+            <alias key='1' value='Junction 1' />
+            <alias key='2' value='Junction 2' />
+            <alias key='3' value='Junction 3' />
+            <alias key='4' value='Junction 4' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='cleaned_data.csv' id='cleaned_data.csv_4D8A2DEC0CCB4DBF9A8E3589589F46D9'>
+            <properties context=''>
+              <relation connection='textscan.0ywami30zxjtjo1cdghen1nsq0te' name='cleaned_data.csv' table='[cleaned_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='datetime' name='DateTime' ordinal='1' />
+                  <column datatype='integer' name='Junction' ordinal='2' />
+                  <column datatype='integer' name='Vehicles' ordinal='3' />
+                  <column datatype='datetime' name='Time' ordinal='4' />
+                  <column datatype='integer' name='Hour' ordinal='5' />
+                  <column datatype='integer' name='Month-Day' ordinal='6' />
+                  <column datatype='integer' name='Day-of-Week' ordinal='7' />
+                  <column datatype='integer' name='Year' ordinal='8' />
+                  <column datatype='integer' name='Month' ordinal='9' />
+                  <column datatype='integer' name='Day' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_35D834EB183948F8880DFAC650890C57]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Dataset by Junction' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Junction (bin)' />
+        <param name='target' value='Dataset by Junction' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Dataset by Junction'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='preprocesed_data' name='federated.01x2u8413axr4p1a08a690lugigh' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Junction 1' caption='Junction_bin' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <aliases>
+                <alias key='1' value='Junction 1' />
+                <alias key='2' value='Junction 2' />
+                <alias key='3' value='Junction 3' />
+                <alias key='4' value='Junction 4' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.01x2u8413axr4p1a08a690lugigh'>
+            <column caption='Junction count' datatype='real' default-format='p0.00%' name='[Calculation_107804975179784194]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([Junction])/48120' />
+            </column>
+            <column caption='Junction Category' datatype='string' name='[Calculation_107804975181455363]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Junction]&#13;&#10;WHEN  1 THEN &quot;Junction 1&quot;&#13;&#10;WHEN  2 THEN &quot;Junction 2&quot;&#13;&#10;WHEN 3 THEN &quot;Junction 3&quot;&#13;&#10;WHEN 4 THEN &quot;Junction 4&quot;&#13;&#10;END' />
+            </column>
+            <column aggregation='None' caption='Junction (bin)' datatype='integer' name='[Junction (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-3' formula='[Junction]' peg='0' size-parameter='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='integer' name='[Junction]' role='measure' type='quantitative' />
+            <column-instance column='[Junction]' derivation='Count' name='[cnt:Junction:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_107804975181455363]' derivation='None' name='[none:Calculation_107804975181455363:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Junction (bin)]' derivation='None' name='[none:Junction (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_107804975179784194]' derivation='User' name='[usr:Calculation_107804975179784194:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='587' />
+            <format attr='height' value='510' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.01x2u8413axr4p1a08a690lugigh].[none:Junction (bin):ok]' />
+              <wedge-size column='[federated.01x2u8413axr4p1a08a690lugigh].[cnt:Junction:qk]' />
+              <size column='[federated.01x2u8413axr4p1a08a690lugigh].[cnt:Junction:qk]' />
+              <text column='[federated.01x2u8413axr4p1a08a690lugigh].[usr:Calculation_107804975179784194:qk]' />
+              <text column='[federated.01x2u8413axr4p1a08a690lugigh].[none:Calculation_107804975181455363:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{9ECA690B-0EBC-4BE1-8C97-34642C9014A7}' />
+    </worksheet>
+    <worksheet name='Day of the week versus Vehicle count'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='preprocesed_data' name='federated.01x2u8413axr4p1a08a690lugigh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01x2u8413axr4p1a08a690lugigh'>
+            <column datatype='integer' name='[Day-of-Week]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Vehicles]' role='measure' type='quantitative' />
+            <column-instance column='[Day-of-Week]' derivation='Sum' name='[sum:Day-of-Week:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Vehicles]' derivation='Sum' name='[sum:Vehicles:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing custom-mark-size-in-axis-units='0.75' mark-alignment='mark-alignment-center' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='true' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#4e79a7' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#4e79a7' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.01x2u8413axr4p1a08a690lugigh].[sum:Vehicles:qk]</rows>
+        <cols>[federated.01x2u8413axr4p1a08a690lugigh].[sum:Day-of-Week:qk]</cols>
+      </table>
+      <simple-id uuid='{7EADB3CB-CF3D-4C70-A156-0579CD9BF412}' />
+    </worksheet>
+    <worksheet name='Predictions of Vehicles for Next year'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='preprocesed_data' name='federated.01x2u8413axr4p1a08a690lugigh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01x2u8413axr4p1a08a690lugigh'>
+            <column caption='Date Time' datatype='datetime' name='[DateTime]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Vehicles]' role='measure' type='quantitative' />
+            <column-instance column='[Vehicles]' derivation='Sum' forecast-column-base='[sum:Vehicles:qk]' forecast-column-type='forecast-value' name='[fVal:sum:Vehicles:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DateTime]' derivation='Month' name='[mn:DateTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DateTime]' derivation='Quarter' name='[qr:DateTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Vehicles]' derivation='Sum' name='[sum:Vehicles:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DateTime]' derivation='Year' name='[yr:DateTime:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.01x2u8413axr4p1a08a690lugigh].[none:Forecast Indicator:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.01x2u8413axr4p1a08a690lugigh].[fVal:sum:Vehicles:qk]</rows>
+        <cols>([federated.01x2u8413axr4p1a08a690lugigh].[yr:DateTime:ok] / ([federated.01x2u8413axr4p1a08a690lugigh].[qr:DateTime:ok] / [federated.01x2u8413axr4p1a08a690lugigh].[mn:DateTime:ok]))</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-periods='Year-Trunc' range-size='1' range-type='next' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{9DE3A05F-1EA8-45BF-9730-82D48D952B2B}' />
+    </worksheet>
+    <worksheet name='Vehicles by Month'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='preprocesed_data' name='federated.01x2u8413axr4p1a08a690lugigh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01x2u8413axr4p1a08a690lugigh'>
+            <column caption='Date Time' datatype='datetime' name='[DateTime]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Vehicles]' role='measure' type='quantitative' />
+            <column-instance column='[DateTime]' derivation='Month' name='[mn:DateTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DateTime]' derivation='Quarter' name='[qr:DateTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Vehicles]' derivation='Sum' name='[sum:Vehicles:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DateTime]' derivation='Year' name='[yr:DateTime:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.01x2u8413axr4p1a08a690lugigh].[sum:Vehicles:qk]</rows>
+        <cols>([federated.01x2u8413axr4p1a08a690lugigh].[yr:DateTime:ok] / ([federated.01x2u8413axr4p1a08a690lugigh].[qr:DateTime:ok] / [federated.01x2u8413axr4p1a08a690lugigh].[mn:DateTime:ok]))</cols>
+      </table>
+      <simple-id uuid='{DC4CB494-EEB2-4D90-B7D4-8EE7890132A9}' />
+    </worksheet>
+    <worksheet name='Vehicles by Time of the Day'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='preprocesed_data' name='federated.01x2u8413axr4p1a08a690lugigh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01x2u8413axr4p1a08a690lugigh'>
+            <column caption='Hour (bin)' datatype='integer' name='[Hour (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Hour]' peg='0' size='1' />
+            </column>
+            <column datatype='integer' name='[Hour]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Vehicles]' role='measure' type='quantitative' />
+            <column-instance column='[Hour (bin)]' derivation='None' name='[none:Hour (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Vehicles]' derivation='Sum' name='[sum:Vehicles:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.01x2u8413axr4p1a08a690lugigh].[sum:Vehicles:qk]</rows>
+        <cols>[federated.01x2u8413axr4p1a08a690lugigh].[none:Hour (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.01x2u8413axr4p1a08a690lugigh].[Hour (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{D1A91D54-2005-44F8-A6A8-7E791A964B00}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1600' minheight='800' minwidth='1600' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='15' param='horz' type-v2='layout-flow' w='99000' x='500' y='1000'>
+            <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='99000' x='500' y='1000'>
+              <zone h='98000' id='5' type-v2='layout-basic' w='99000' x='500' y='1000'>
+                <zone h='49000' id='10' name='Day of the week versus Vehicle count' w='45875' x='500' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='49000' id='11' name='Vehicles by Month' w='53125' x='46375' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='49000' id='12' name='Vehicles by Time of the Day' w='49500' x='500' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='49000' id='13' name='Predictions of Vehicles for Next year' w='49500' x='50000' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C3EE59DA-E4B8-4E5A-8EF2-44D557A9415E}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' name='Dataset by Junction'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.01x2u8413axr4p1a08a690lugigh].[cnt:Junction:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.01x2u8413axr4p1a08a690lugigh].[none:Junction (bin):ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8C176834-E1C7-4AAE-BEEE-9BFA2344EC5B}' />
+    </window>
+    <window class='worksheet' name='Day of the week versus Vehicle count'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0272AD3D-5828-4EAB-8821-0A817EA6F197}' />
+    </window>
+    <window class='worksheet' name='Vehicles by Month'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D95FDCC5-CEF0-4905-9228-722BFF63B5F7}' />
+    </window>
+    <window class='worksheet' name='Vehicles by Time of the Day'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E3077E96-9428-42C7-8C06-077D08DC93DF}' />
+    </window>
+    <window class='worksheet' name='Predictions of Vehicles for Next year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.01x2u8413axr4p1a08a690lugigh].[none:Forecast Indicator:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1052FFF1-E882-4551-AD91-BB95FBFF0AF3}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Day of the week versus Vehicle count'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Predictions of Vehicles for Next year'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Vehicles by Month'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Vehicles by Time of the Day'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='11' />
+      <simple-id uuid='{4F301A58-462E-4296-9EFE-F6D5811377C6}' />
+    </window>
+  </windows>
+</workbook>
